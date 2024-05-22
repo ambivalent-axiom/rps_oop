@@ -79,7 +79,18 @@ class RockPaperScissors
         $players = [];
         for($i = 0; $i < $playerCount; $i++) {
             echo "Player" . ($i+1) . "\n";
-            $name = readline("Enter name: ");
+            while(true) {
+                $name = readline("Enter name: ");
+                $names = array_map(function ($player) {
+                    return $player->getName();
+                }, $players);
+                if(in_array($name, $names)) {
+                    echo "This name has been already chosen by another player!\n";
+                    continue;
+                }
+                break;
+            }
+
             $ai = strtolower(readline("Real person Y?: "));
             if($ai == 'y') {
                 $ai = false;
