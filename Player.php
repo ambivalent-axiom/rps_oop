@@ -20,9 +20,9 @@ class Player
     {
         return $this->player;
     }
-    public function setAsset(RockPaperScissors $game, $userInput=Null): void
+    public function setAsset(RockPaperScissors $game, $userInput = Null): void
     {
-        if($this->isAI) {
+        if($this->isAI || $userInput == Null) {
             $this->player = array_rand($game->getAssets());
         } else {
             $this->player = $game->getKeys()[$userInput-1];
