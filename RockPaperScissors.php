@@ -1,7 +1,7 @@
 <?php
 class RockPaperScissors
 {
-    protected array $assets;
+    private array $assets;
     private array $keys;
     private bool $gameOn;
     private array $players;
