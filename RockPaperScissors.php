@@ -59,7 +59,7 @@ class RockPaperScissors
         }
         foreach ($maxWinners as $winner) {
             foreach ($this->players as $player) {
-                if($player->getName() === $winner->getName()) {
+                if($player === $winner) {git
                     $player->setScore(1);
                 }
             }
